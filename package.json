@@ -15,8 +15,12 @@
     ]
   },
   "dependencies": {
-    "@serverless-stack/cli": "0.69.0",
-    "@serverless-stack/resources": "0.69.0",
-    "aws-cdk-lib": "2.15.0"
+    "uuid": "8.3.2"
+  },
+  "devDependencies": {
+    "@serverless-stack/cli": "0.69.3",
+    "@serverless-stack/resources": "0.69.3",
+    "aws-cdk-lib": "2.15.0",
+    "aws-sdk": "2.1101.0"
   }
 }

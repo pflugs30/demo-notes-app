@@ -21,5 +21,11 @@ export default class StorageStack extends sst.Stack {
       },
       primaryIndex: { partitionKey: "userId", sortKey: "noteId" },
     });
+
+    // Show the auth resources in the output
+    this.addOutputs({
+      BucketName: this.bucket.bucketName,
+      BucketArn: this.bucket.bucketArn,
+    });
   }
 }

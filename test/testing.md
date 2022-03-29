@@ -108,6 +108,7 @@ curl -X DELETE https://xi4hzb7mz1.execute-api.us-east-1.amazonaws.com/notes/d61b
 
 ## Create User
 ### Request
+Note: these test commands are designed to be run on Windows only.
 ``` cmd
 aws cognito-idp sign-up ^
   --region us-east-1 ^
@@ -159,4 +160,31 @@ Making API request
     createdAt: 1648425996640
   }
 }
+```
+
+## Billing
+### Request
+Note: these test commands are designed to be run on Windows only.
+
+``` cmd
+npx aws-api-gateway-cli-test ^
+    --username admin@example.com ^
+    --password Passw0rd! ^
+    --user-pool-id us-east-1_PkClGNAjO ^
+    --app-client-id 6i48as6hh6hj10j0ujhv3qsebm ^
+    --cognito-region us-east-1 ^
+    --identity-pool-id us-east-1:0d702300-2039-47c8-bff7-7dbe80e549ea ^
+    --invoke-url https://xi4hzb7mz1.execute-api.us-east-1.amazonaws.com ^
+    --api-gateway-region us-east-1 ^
+    --path-template /billing ^
+    --method POST ^
+    --body "{\"source\":\"tok_visa\",\"storage\":21}"
+```
+
+### Response
+``` text
+Authenticating with User Pool
+Getting temporary credentials
+Making API request
+{ status: 200, statusText: 'OK', data: { status: true } }
 ```

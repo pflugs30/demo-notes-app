@@ -18,6 +18,18 @@ Stack dev-notes-auth
     Region: us-east-1
     UserPoolClientId: 6i48as6hh6hj10j0ujhv3qsebm
     UserPoolId: us-east-1_PkClGNAjO
+
+Stack dev-notes-frontend
+  Status: deployed
+  Outputs:
+    SiteUrl: https://d2e9va7xq2ndjr.cloudfront.net
+  ReactSite:
+    REACT_APP_API_URL: https://xi4hzb7mz1.execute-api.us-east-1.amazonaws.com
+    REACT_APP_BUCKET: dev-notes-storage-uploadsbucketc4b27cc7-wy7tybnlraxe
+    REACT_APP_IDENTITY_POOL_ID: us-east-1:0d702300-2039-47c8-bff7-7dbe80e549ea
+    REACT_APP_REGION: us-east-1
+    REACT_APP_USER_POOL_CLIENT_ID: 6i48as6hh6hj10j0ujhv3qsebm
+    REACT_APP_USER_POOL_ID: us-east-1_PkClGNAjO
 ```
 
 # Testing

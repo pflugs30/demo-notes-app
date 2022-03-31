@@ -5,9 +5,9 @@
   "scripts": {
     "test": "sst test",
     "start": "sst start --increase-timeout",
-    "build": "sst build",
-    "deploy": "sst deploy",
-    "remove": "sst remove"
+    "build": "sst build --stage prod",
+    "deploy": "sst deploy --stage prod",
+    "remove": "sst remove --stage prod"
   },
   "eslintConfig": {
     "extends": [

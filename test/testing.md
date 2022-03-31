@@ -1,4 +1,5 @@
 # Outputs
+## Dev
 ``` YAML
 Stack dev-notes-storage
   Status: no changes
@@ -30,6 +31,40 @@ Stack dev-notes-frontend
     REACT_APP_REGION: us-east-1
     REACT_APP_USER_POOL_CLIENT_ID: 6i48as6hh6hj10j0ujhv3qsebm
     REACT_APP_USER_POOL_ID: us-east-1_PkClGNAjO
+```
+
+## Prod
+``` YAML
+Stack prod-notes-storage
+  Status: no changes
+  Outputs:
+    BucketArn: arn:aws:s3:::prod-notes-storage-uploadsbucketc4b27cc7-1efht5rhzxq6v
+    BucketName: prod-notes-storage-uploadsbucketc4b27cc7-1efht5rhzxq6v
+
+Stack prod-notes-api
+  Status: deployed
+  Outputs:
+    ApiEndpoint: https://api.pflugsnotes.com
+
+Stack prod-notes-auth
+  Status: no changes
+  Outputs:
+    IdentityPoolId: us-east-1:0708cbf5-4bed-4098-ad3e-4472b65f7e8e
+    Region: us-east-1
+    UserPoolClientId: 2vk1mg7e7bvtpbpg2de1f0dg5n
+    UserPoolId: us-east-1_8kQW6V9JO
+
+Stack prod-notes-frontend
+  Status: deployed
+  Outputs:
+    SiteUrl: https://pflugsnotes.com
+  ReactSite:
+    REACT_APP_API_URL: https://api.pflugsnotes.com
+    REACT_APP_BUCKET: prod-notes-storage-uploadsbucketc4b27cc7-1efht5rhzxq6v
+    REACT_APP_IDENTITY_POOL_ID: us-east-1:0708cbf5-4bed-4098-ad3e-4472b65f7e8e
+    REACT_APP_REGION: us-east-1
+    REACT_APP_USER_POOL_CLIENT_ID: 2vk1mg7e7bvtpbpg2de1f0dg5n
+    REACT_APP_USER_POOL_ID: us-east-1_8kQW6V9JO
 ```
 
 # Testing

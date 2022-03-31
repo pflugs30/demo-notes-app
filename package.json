@@ -9,6 +9,10 @@
     "deploy": "sst deploy --stage prod",
     "remove": "sst remove --stage prod"
   },
+  "engines" : { 
+    "npm" : ">=6.14.16",
+    "node" : ">=14.19.1"
+  },
   "eslintConfig": {
     "extends": [
       "serverless-stack"

@@ -1,3 +1,5 @@
-before_build:
+before_compile:
   - n 14.19.1
+
+before_build:
   - cd frontend && yarn install

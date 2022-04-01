@@ -15,6 +15,7 @@ export default class ApiStack extends sst.Stack {
       customDomain: scope.stage === "prod" ? "api.pflugsnotes.com" : undefined,
       defaultAuthorizationType: "AWS_IAM",
       defaultFunctionProps: {
+        memorySize: 128,
         environment: {
           TABLE_NAME: table.tableName,
           STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,

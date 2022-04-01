@@ -7,8 +7,9 @@ import { useHistory } from "react-router-dom";
 import { Auth } from "aws-amplify";
 
 import "./App.css";
-import { AppContext } from "./lib/contextLib";
 import Routes from "./Routes";
+import ErrorBoundary from "./components/ErrorBoundary";
+import { AppContext } from "./lib/contextLib";
 
 function App() {
   const [isAuthenticated, userHasAuthenticated] = useState(false);
@@ -70,9 +71,11 @@ function App() {
           </Navbar.Collapse>
         </Navbar>
 
-        <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
-          <Routes />
-        </AppContext.Provider>
+        <ErrorBoundary>
+          <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
+            <Routes />
+          </AppContext.Provider>
+        </ErrorBoundary>
       </div>
     )
   );

@@ -78,5 +78,11 @@ export default function Home() {
     );
   }
 
-  return <div className="Home">{isAuthenticated ? renderNotes() : renderLander()}</div>;
+  return (
+    <div className="Home">
+      {isAuthenticated ? renderNotes() : renderLander()}
+      {/* Uncomment the line below to simulate an error. */}
+      {/* {isAuthenticated.none.no} */}
+    </div>
+  );
 }
